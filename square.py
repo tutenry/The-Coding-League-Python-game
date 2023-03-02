@@ -15,7 +15,7 @@ class Square():
         self.dead = False
 
     def update(self, screen, keys):
-        if self.dead == False:
+        if self.dead == True:
             return
         self.draw(screen)
         self.move(keys)

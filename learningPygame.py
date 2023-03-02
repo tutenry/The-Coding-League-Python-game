@@ -18,8 +18,9 @@ enemies = []
 
 while running:
     clock.tick(FPS)
+    screen.fill((255, 255, 255))
 
-    if random.randint(0, 100) == 0:
+    if random.randint(0, 100) == 0 and len(enemies) < 10:
         enemies.append(enemy.Enemy())
 
     for event in pygame.event.get():
@@ -28,8 +29,6 @@ while running:
     
     for obs in enemies:
         obs.update(screen, player)
-
-    screen.fill((255, 255, 255))
 
     keys = pygame.key.get_pressed()
     
