@@ -18,8 +18,11 @@ class Enemy():
         self.yvel = 0
         self.rect = pygame.Rect(self.x, self.y, self.radius, self.radius)
         self.color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
+        self.dead = False
 
     def update(self, screen, player):
+        if self.dead:
+            return
         self.draw(screen)
         self.follow(player)
         self.rect = pygame.Rect(self.x-self.radius/2, self.y-self.radius/2, self.radius, self.radius)
